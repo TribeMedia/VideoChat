@@ -12,5 +12,7 @@ public interface MessageService {
 
     public void HandelCREATE_PIPELINE_MESSAGE(ConversationMessage message, String sessionId, String name);
 
-    public void HandeJOIN_PIPELINE_MESSAGE(ConversationMessage message, String sessionId, String name);
+    public void HandelJOIN_PIPELINE_MESSAGE(ConversationMessage message, String sessionId, String name);
+
+    public void HandelRELEASE_PIPELINE_MESSAGE(ConversationMessage message, String sessionId, String name);
 }

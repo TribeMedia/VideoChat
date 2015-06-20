@@ -52,7 +52,7 @@ public class MessageServiceImpl implements MessageService {
     }
 
     @Override
-    public void HandeJOIN_PIPELINE_MESSAGE(ConversationMessage message, String sessionId, String name) {
+    public void HandelJOIN_PIPELINE_MESSAGE(ConversationMessage message, String sessionId, String name) {
         if (onlineSession.IHaveAccessToMediaPipeline(message.getTo(), name)) {
             userSession session = new userSession(name, sessionId, UserType.Receive);
             mediaPipelineService.addUserToPipeline(message.getTo(), session, message.getContent());
@@ -61,5 +61,10 @@ public class MessageServiceImpl implements MessageService {
                     new ConversationMessage(MessageType.ERROR, "you don't ability to access  " + message.getTo() + " ask him to invite you or it may be not exist", null, name, null));
 
         }
+    }
+
+    @Override
+    public void HandelRELEASE_PIPELINE_MESSAGE(ConversationMessage message, String sessionId, String name) {
+        mediaPipelineService.SomeOneRemoveSessionCheckHim(sessionId);
     }
 }

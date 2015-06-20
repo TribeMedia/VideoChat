@@ -58,7 +58,7 @@ public class PresenceEventListener implements ApplicationListener<ApplicationEve
                 try {
                     Thread.sleep(10000);
                     Set<String> s1 = onlineSession.UserSessions(principal.getName());
-                    if (s1.size() == 1) {
+                    if (s1!=null&&s1.size() == 1) {
 //                            onlineSession.Notfiy(ser.MyonlineFrindes(principal.getName()), "offline", principal.getName());
                         onlineSession.PersonState(false, principal.getName(), "");
                     } else {

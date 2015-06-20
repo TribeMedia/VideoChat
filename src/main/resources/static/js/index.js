@@ -8,7 +8,7 @@ window.onload = function () {
     videoOutput = document.getElementById('videoOutput');
 
     var path = $("meta[name='path']").attr("content");
-    var socket = new SockJS(path + '/hello');
+    var socket = new SockJS(path + 'hello');
     stompClient = Stomp.over(socket);
 
     var csrfToken = $("meta[name='_csrf']").attr("content");
@@ -27,47 +27,49 @@ window.onload = function () {
             else if (o.messageType == "INVITE_TO_PIPELINE_MESSAGE") {
 
             }
+            else if (o.messageType == "RELEASE_PIPELINE_MESSAGE") {
+                if (webRtcPeer) {
+                    webRtcPeer.dispose();
+                    webRtcPeer = null;
+                }
+            }
         });
     });
-    }
+}
 
 function CREATE_PIPELINE_MESSAGE(type) {
-    if (webRtcPeer == null)
-        if (type == 'One_To_Many') {
-            webRtcPeer = kurentoUtils.WebRtcPeer.startSendOnly(videoInput, function (sdpOffer) {
+    if (type == 'One_To_Many') {
+        webRtcPeer = kurentoUtils.WebRtcPeer.startSendOnly(videoInput, function (sdpOffer) {
                 var message = JSON.stringify({
                     'messageType': "CREATE_PIPELINE_MESSAGE",
                     'content': sdpOffer,
                     'mediaPipelineType': type
                 });
                 stompClient.send("/app/message", {},
-                        message
-                        )
-                        ;
+                    message
+                )
+                ;
             }
             , function (error) {
             }
-            );
+        );
 
 
-        } else if (type == 'One_To_One') {
-            webRtcPeer = kurentoUtils.WebRtcPeer.startSendRecv(videoInput, videoOutput, function (sdpOffer) {
+    } else if (type == 'One_To_One') {
+        webRtcPeer = kurentoUtils.WebRtcPeer.startSendRecv(videoOutput, videoInput, function (sdpOffer) {
                 var message = JSON.stringify({
                     'messageType': "CREATE_PIPELINE_MESSAGE",
                     'content': sdpOffer,
                     'mediaPipelineType': type
                 });
-                stompClient.send("/app/message", {},
-                        message
-                        )
-                        ;
+                stompClient.send("/app/message", {}, message);
             }
             , function (error) {
             }
-            );
+        );
 
 
-        }
+    }
 
 }
 
@@ -97,32 +99,24 @@ function RELEASE_PIPELINE_MESSAGE() {
 
 function JOIN_PIPELINE_MESSAGE(to, type) {
     if (type == 'One_To_Many') {
-        webRtcPeer = kurentoUtils.WebRtcPeer.startRecvOnly(videoOutput, function (sdpOffer) {
+        webRtcPeer = kurentoUtils.WebRtcPeer.startRecvOnly(videoInput, function (sdpOffer) {
             var message = JSON.stringify({
                 'messageType': "JOIN_PIPELINE_MESSAGE",
                 'content': sdpOffer,
                 'to': to
             });
-            stompClient.send("/app/message", {},
-                    message
-                    )
-                    ;
-
+            stompClient.send("/app/message", {}, message);
         }, function (error) {
         });
     }
     else if (type == 'One_To_One') {
-        webRtcPeer = kurentoUtils.WebRtcPeer.startSendRecv(videoInput, videoOutput, function (sdpOffer) {
+        webRtcPeer = kurentoUtils.WebRtcPeer.startSendRecv(videoOutput, videoInput, function (sdpOffer) {
             var message = JSON.stringify({
                 'messageType': "JOIN_PIPELINE_MESSAGE",
                 'content': sdpOffer,
                 'to': to
             });
-            stompClient.send("/app/message", {},
-                    message
-                    )
-                    ;
-
+            stompClient.send("/app/message", {}, message);
         }, function (error) {
         });
     }
