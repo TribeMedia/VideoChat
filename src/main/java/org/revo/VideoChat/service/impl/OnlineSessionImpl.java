@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
 import org.revo.VideoChat.domain.user;
-import org.revo.VideoChat.messages.ConversationMessage;
-import org.revo.VideoChat.messages.MessageType;
+import org.revo.VideoChat.domain.ConversationMessage;
+import org.revo.VideoChat.domain.ConversationMessage.MessageType;
 import org.revo.VideoChat.service.OnlineSession;
 
 import java.util.Arrays;

@@ -53,4 +53,8 @@ public class CallMediaPipeline {
         this.sessions.add(userSession);
     }
 
+    public enum MediaPipelineType {
+        One_To_One, One_To_Many
+    }
+
 }

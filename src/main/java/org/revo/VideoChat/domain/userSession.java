@@ -15,7 +15,7 @@ public class userSession {
     public userSession() {
     }
 
-    public userSession(String name, String session, org.revo.VideoChat.domain.UserType userType) {
+    public userSession(String name, String session,UserType userType) {
         Name = name;
         Session = session;
         UserType = userType;
@@ -62,5 +62,8 @@ public class userSession {
     public userSession setWebRtcEndpoint(WebRtcEndpoint webRtcEndpoint) {
         WebRtcEndpoint = webRtcEndpoint;
         return this;
+    }
+    public enum UserType {
+        Send, Receive, SendAndReceive
     }
 }

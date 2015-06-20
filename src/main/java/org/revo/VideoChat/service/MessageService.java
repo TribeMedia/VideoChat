@@ -1,7 +1,6 @@
 package org.revo.VideoChat.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.revo.VideoChat.messages.ConversationMessage;
+import org.revo.VideoChat.domain.ConversationMessage;
 
 /**
  * Created by ashraf on 6/11/15.

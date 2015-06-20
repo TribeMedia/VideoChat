@@ -1,11 +1,10 @@
 package org.revo.VideoChat.service;
 
 import org.revo.VideoChat.domain.CallMediaPipeline;
-import org.revo.VideoChat.domain.MediaPipelineType;
+import org.revo.VideoChat.domain.CallMediaPipeline.MediaPipelineType;
 import org.revo.VideoChat.domain.userSession;
 
 import java.util.List;
-import java.util.Set;
 
 /**
  * Created by ashraf on 6/10/15.
@@ -18,7 +17,7 @@ public interface MediaPipelineService {
 
     public void ReleasePipelineUsingNameOfCreatorOfPipeline(String NameOfCreatorOfPipeline);
 
-    public void ReleasePipelineUsingSessionId(CallMediaPipeline CallMediaPipeline,List<userSession> collect,String simpSessionId);
+    public void ReleasePipelineUsingSessionId(CallMediaPipeline CallMediaPipeline, List<userSession> collect, String simpSessionId);
 
     public boolean HaveOrInMediaPipeline(String Name);
 

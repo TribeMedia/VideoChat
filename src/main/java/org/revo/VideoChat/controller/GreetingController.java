@@ -1,14 +1,14 @@
 package org.revo.VideoChat.controller;
 
+import org.revo.VideoChat.domain.ConversationMessage;
+import org.revo.VideoChat.domain.ConversationMessage.MessageType;
+import org.revo.VideoChat.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Controller;
-import org.revo.VideoChat.messages.ConversationMessage;
-import org.revo.VideoChat.messages.MessageType;
-import org.revo.VideoChat.service.MessageService;
 
 import java.security.Principal;
 

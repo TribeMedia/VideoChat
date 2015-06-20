@@ -7,11 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
 import org.revo.VideoChat.domain.CallMediaPipeline;
-import org.revo.VideoChat.domain.MediaPipelineType;
-import org.revo.VideoChat.domain.UserType;
+import org.revo.VideoChat.domain.CallMediaPipeline.MediaPipelineType;
+import org.revo.VideoChat.domain.userSession.UserType;
 import org.revo.VideoChat.domain.userSession;
-import org.revo.VideoChat.messages.ConversationMessage;
-import org.revo.VideoChat.messages.MessageType;
+import org.revo.VideoChat.domain.ConversationMessage;
+import org.revo.VideoChat.domain.ConversationMessage.MessageType;
 import org.revo.VideoChat.service.MediaPipelineService;
 import org.revo.VideoChat.service.OnlineSession;
 

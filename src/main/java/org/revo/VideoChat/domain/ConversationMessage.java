@@ -1,7 +1,7 @@
-package org.revo.VideoChat.messages;
+package org.revo.VideoChat.domain;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import org.revo.VideoChat.domain.MediaPipelineType;
+import org.revo.VideoChat.domain.CallMediaPipeline.MediaPipelineType;
 
 import java.io.Serializable;
 
@@ -72,4 +72,16 @@ public class ConversationMessage implements Serializable {
         this.mediaPipelineType = mediaPipelineType;
         return this;
     }
+
+    public enum MessageType {
+        TEXT_MESSAGE,
+        LOGOUT_MESSAGE,
+        RELEASE_PIPELINE_MESSAGE,
+        SDPOFFER_MESSAGE,
+        INVITE_TO_PIPELINE_MESSAGE,
+        ERROR,
+        CREATE_PIPELINE_MESSAGE,
+        JOIN_PIPELINE_MESSAGE
+    }
+
 }
