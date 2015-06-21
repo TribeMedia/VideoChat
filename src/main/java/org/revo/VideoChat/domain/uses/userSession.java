@@ -1,6 +1,7 @@
-package org.revo.VideoChat.domain;
+package org.revo.VideoChat.domain.uses;
 
 import org.kurento.client.WebRtcEndpoint;
+import org.revo.VideoChat.domain.uses.Misc.UserType;
 
 /**
  * Created by ashraf on 6/9/15.
@@ -15,7 +16,7 @@ public class userSession {
     public userSession() {
     }
 
-    public userSession(String name, String session,UserType userType) {
+    public userSession(String name, String session, UserType userType) {
         Name = name;
         Session = session;
         UserType = userType;
@@ -62,8 +63,5 @@ public class userSession {
     public userSession setWebRtcEndpoint(WebRtcEndpoint webRtcEndpoint) {
         WebRtcEndpoint = webRtcEndpoint;
         return this;
-    }
-    public enum UserType {
-        Send, Receive, SendAndReceive
     }
 }

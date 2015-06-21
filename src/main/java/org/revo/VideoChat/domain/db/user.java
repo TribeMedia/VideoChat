@@ -1,4 +1,4 @@
-package org.revo.VideoChat.domain;
+package org.revo.VideoChat.domain.db;
 
 import org.hibernate.validator.constraints.Email;
 import org.springframework.security.core.GrantedAuthority;

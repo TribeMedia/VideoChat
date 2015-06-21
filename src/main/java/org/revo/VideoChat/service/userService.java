@@ -1,6 +1,6 @@
 package org.revo.VideoChat.service;
 
-import org.revo.VideoChat.domain.user;
+import org.revo.VideoChat.domain.db.user;
 
 import java.util.List;
 

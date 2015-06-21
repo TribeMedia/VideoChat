@@ -2,7 +2,7 @@ package org.revo.VideoChat.repositery;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
-import org.revo.VideoChat.domain.user;
+import org.revo.VideoChat.domain.db.user;
 
 import java.util.List;
 

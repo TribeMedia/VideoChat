@@ -1,6 +1,6 @@
 package org.revo.VideoChat.service;
 
-import org.revo.VideoChat.domain.ConversationMessage;
+import org.revo.VideoChat.domain.uses.ConversationMessage;
 
 /**
  * Created by ashraf on 6/11/15.

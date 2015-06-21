@@ -1,7 +1,6 @@
-package org.revo.VideoChat.domain;
+package org.revo.VideoChat.domain.uses;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import org.revo.VideoChat.domain.CallMediaPipeline.MediaPipelineType;
 
 import java.io.Serializable;
 
@@ -10,9 +9,9 @@ import java.io.Serializable;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ConversationMessage implements Serializable {
-    private MessageType messageType;
+    private Misc.MessageType messageType;
     private String content;
-    private MediaPipelineType mediaPipelineType;
+    private Misc.MediaPipelineType mediaPipelineType;
     private String from;
     private String to;
 
@@ -20,7 +19,7 @@ public class ConversationMessage implements Serializable {
     }
 
 
-    public ConversationMessage(MessageType messageType, String content, MediaPipelineType mediaPipelineType, String from, String to) {
+    public ConversationMessage(Misc.MessageType messageType, String content, Misc.MediaPipelineType mediaPipelineType, String from, String to) {
         this.messageType = messageType;
         this.content = content;
         this.mediaPipelineType = mediaPipelineType;
@@ -28,11 +27,11 @@ public class ConversationMessage implements Serializable {
         this.to = to;
     }
 
-    public MessageType getMessageType() {
+    public Misc.MessageType getMessageType() {
         return messageType;
     }
 
-    public ConversationMessage setMessageType(MessageType messageType) {
+    public ConversationMessage setMessageType(Misc.MessageType messageType) {
         this.messageType = messageType;
         return this;
     }
@@ -64,24 +63,12 @@ public class ConversationMessage implements Serializable {
         return this;
     }
 
-    public MediaPipelineType getMediaPipelineType() {
+    public Misc.MediaPipelineType getMediaPipelineType() {
         return mediaPipelineType;
     }
 
-    public ConversationMessage setMediaPipelineType(MediaPipelineType mediaPipelineType) {
+    public ConversationMessage setMediaPipelineType(Misc.MediaPipelineType mediaPipelineType) {
         this.mediaPipelineType = mediaPipelineType;
         return this;
     }
-
-    public enum MessageType {
-        TEXT_MESSAGE,
-        LOGOUT_MESSAGE,
-        RELEASE_PIPELINE_MESSAGE,
-        SDPOFFER_MESSAGE,
-        INVITE_TO_PIPELINE_MESSAGE,
-        ERROR,
-        CREATE_PIPELINE_MESSAGE,
-        JOIN_PIPELINE_MESSAGE
-    }
-
 }

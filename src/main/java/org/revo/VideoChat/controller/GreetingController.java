@@ -1,7 +1,7 @@
 package org.revo.VideoChat.controller;
 
-import org.revo.VideoChat.domain.ConversationMessage;
-import org.revo.VideoChat.domain.ConversationMessage.MessageType;
+import org.revo.VideoChat.domain.uses.ConversationMessage;
+import org.revo.VideoChat.domain.uses.Misc.MessageType;
 import org.revo.VideoChat.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;

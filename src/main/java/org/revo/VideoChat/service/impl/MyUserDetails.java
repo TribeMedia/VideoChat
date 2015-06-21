@@ -1,6 +1,6 @@
 package org.revo.VideoChat.service.impl;
 
-import org.revo.VideoChat.domain.user;
+import org.revo.VideoChat.domain.db.user;
 import org.revo.VideoChat.repositery.userRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;

@@ -1,8 +1,8 @@
 package org.revo.VideoChat.service;
 
-import org.revo.VideoChat.domain.CallMediaPipeline;
-import org.revo.VideoChat.domain.CallMediaPipeline.MediaPipelineType;
-import org.revo.VideoChat.domain.userSession;
+import org.revo.VideoChat.domain.uses.CallMediaPipeline;
+import org.revo.VideoChat.domain.uses.Misc.MediaPipelineType;
+import org.revo.VideoChat.domain.uses.userSession;
 
 import java.util.List;
 

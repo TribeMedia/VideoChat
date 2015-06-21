@@ -1,4 +1,4 @@
-package org.revo.VideoChat.domain;
+package org.revo.VideoChat.domain.uses;
 
 import org.kurento.client.MediaPipeline;
 
@@ -10,13 +10,13 @@ import java.util.Set;
  */
 public class CallMediaPipeline {
     private MediaPipeline MediaPipeline;
-    private MediaPipelineType MediaPipelineType;
+    private Misc.MediaPipelineType MediaPipelineType;
     private Set<userSession> sessions = new HashSet<>();
 
     public CallMediaPipeline() {
     }
 
-    public CallMediaPipeline(MediaPipeline mediaPipeline, MediaPipelineType mediaPipelineType, userSession userSession) {
+    public CallMediaPipeline(MediaPipeline mediaPipeline, Misc.MediaPipelineType mediaPipelineType, userSession userSession) {
         this.MediaPipeline = mediaPipeline;
         this.MediaPipelineType = mediaPipelineType;
         this.sessions.add(userSession);
@@ -31,11 +31,11 @@ public class CallMediaPipeline {
         return this;
     }
 
-    public MediaPipelineType getMediaPipelineType() {
+    public Misc.MediaPipelineType getMediaPipelineType() {
         return MediaPipelineType;
     }
 
-    public CallMediaPipeline setMediaPipelineType(MediaPipelineType mediaPipelineType) {
+    public CallMediaPipeline setMediaPipelineType(Misc.MediaPipelineType mediaPipelineType) {
         MediaPipelineType = mediaPipelineType;
         return this;
     }
@@ -51,10 +51,6 @@ public class CallMediaPipeline {
 
     public void AddUserSession(userSession userSession) {
         this.sessions.add(userSession);
-    }
-
-    public enum MediaPipelineType {
-        One_To_One, One_To_Many
     }
 
 }

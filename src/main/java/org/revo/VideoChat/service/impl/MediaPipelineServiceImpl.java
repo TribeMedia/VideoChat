@@ -6,12 +6,12 @@ import org.kurento.client.WebRtcEndpoint;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
-import org.revo.VideoChat.domain.CallMediaPipeline;
-import org.revo.VideoChat.domain.CallMediaPipeline.MediaPipelineType;
-import org.revo.VideoChat.domain.userSession.UserType;
-import org.revo.VideoChat.domain.userSession;
-import org.revo.VideoChat.domain.ConversationMessage;
-import org.revo.VideoChat.domain.ConversationMessage.MessageType;
+import org.revo.VideoChat.domain.uses.CallMediaPipeline;
+import org.revo.VideoChat.domain.uses.Misc.MessageType;
+import org.revo.VideoChat.domain.uses.Misc.MediaPipelineType;
+import org.revo.VideoChat.domain.uses.Misc.UserType;
+import org.revo.VideoChat.domain.uses.userSession;
+import org.revo.VideoChat.domain.uses.ConversationMessage;
 import org.revo.VideoChat.service.MediaPipelineService;
 import org.revo.VideoChat.service.OnlineSession;
 
