@@ -1,4 +1,4 @@
-[![ScreenShot](http://www.revotechnik.com/img/software/default.jpg)](https://www.youtube.com/watch?v=rDUh-yolnx4)
+[![ScreenShot](http://i.imgur.com/MDtdHT9.png)](https://www.youtube.com/watch?v=rDUh-yolnx4)
 
 # VideoChat
 application built on spring boot and kurento (one-to-one) and (one-to-many) in server side and clint side using javascripte consol
