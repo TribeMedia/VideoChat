@@ -1,6 +1,7 @@
 # VideoChat
 application built on spring boot and kurento (one-to-one) and (one-to-many) in server side and clint side using javascripte consol
-open the omage link to see video  how to use
+
+#open the image link to see video  how to use
 [![ScreenShot](http://i.imgur.com/MDtdHT9.png)](https://www.youtube.com/watch?v=rDUh-yolnx4)
 
 
